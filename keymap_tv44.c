@@ -14,7 +14,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  TRNS, TRNS,  LBRC,    TAB,       TRNS, RBRC, FN14, FN11, FN18),
 
     /* 2: FN 2, Macros and Symbols */
-    KEYMAP_ARROW(GRV,  TRNS,TRNS,UP,  TRNS,TRNS,TRNS,TRNS, FN4, TRNS,TRNS, TRNS, \
+    KEYMAP_ARROW(GRV,  TRNS,FN23,UP,  FN24,TRNS,TRNS,FN25, FN4, FN26,TRNS, TRNS, \
                  TRNS, HOME,LEFT,DOWN,RGHT,END, FN19,FN5,  FN6, FN7, FN20, TRNS, \
                  TRNS, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, MINS,SLSH,TRNS, TRNS, \
                  TRNS, TRNS,  FN12,     ENT,   DELETE,   FN13, FN15, TRNS, TRNS),
@@ -83,6 +83,18 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         case 19:
             return (record->event.pressed ? MACRO( D(LSHIFT), T(0), U(LSHIFT), END ) :
                 MACRO_NONE );
+        case 20:
+            return (record->event.pressed ? MACRO( D(LCTRL), D(LEFT), END ) :
+                MACRO( U(LEFT), U(LCTRL), END ) );
+        case 21:
+            return (record->event.pressed ? MACRO( D(LCTRL), D(RGHT), END ) :
+                MACRO( U(RGHT), U(LCTRL), END ) );
+        case 22:
+            return (record->event.pressed ? MACRO( D(LSHIFT), D(LCTRL), D(LEFT), END ) :
+                MACRO( U(LEFT), U(LCTRL), U(LSHIFT), END ) );
+        case 23:
+            return (record->event.pressed ? MACRO( D(LSHIFT), D(LCTRL), D(RGHT), END ) :
+                MACRO( U(RGHT), U(LCTRL), U(LSHIFT), END ) );
     }
     return MACRO_NONE;
 }
@@ -112,4 +124,8 @@ const action_t PROGMEM fn_actions[] = {
     [20] = ACTION_MACRO(17),
     [21] = ACTION_MACRO(18),
     [22] = ACTION_MACRO(19),
+    [23] = ACTION_MACRO(20),
+    [24] = ACTION_MACRO(21),
+    [25] = ACTION_MACRO(22),
+    [26] = ACTION_MACRO(23),
 };
