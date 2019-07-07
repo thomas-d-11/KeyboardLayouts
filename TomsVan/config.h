@@ -19,7 +19,7 @@
 #define BACKLIGHT_PIN B7
 #define USB_MAX_POWER_CONSUMPTION 100
 #define DEBOUNCING_DELAY  5
-#define TAPPING_TERM      175
+#define TAPPING_TERM 300
 #define IS_COMMAND() ( \
     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \
 )
