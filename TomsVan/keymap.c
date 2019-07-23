@@ -272,5 +272,5 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [VOL_BRI_UP] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, vbu_func, NULL, 175),
   [FF_NAV_LFT] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, fnl_func, NULL, 175),
   [FF_NAV_RGT] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, fnr_func, NULL, 175),
-  [QT_L2] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, ql_finished, ql_reset, 275)
+  [QT_L2] = ACTION_TAP_DANCE_FN_ADVANCED_TIME(NULL, ql_finished, ql_reset, 175)
 };
